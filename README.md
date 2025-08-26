@@ -25,7 +25,7 @@ package main
 
 import (
     "log"
-    "github.com/Dashgram/go-dashgram"
+    "github.com/dashgram/go-dashgram"
 )
 
 func main() {
@@ -53,7 +53,7 @@ import (
     "log"
     "time"
     "net/http"
-    "github.com/Dashgram/go-dashgram"
+    "github.com/dashgram/go-dashgram"
 )
 
 func main() {
@@ -94,7 +94,7 @@ package main
 import (
     "log"
     "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-    "github.com/Dashgram/go-dashgram"
+    "github.com/dashgram/go-dashgram"
 )
 
 func main() {
@@ -134,7 +134,7 @@ import (
     "log"
     "time"
     "gopkg.in/telebot.v3"
-    "github.com/Dashgram/go-dashgram"
+    "github.com/dashgram/go-dashgram"
 )
 
 func main() {
@@ -228,7 +228,7 @@ client.InvitedByAsyncWithContext(ctx, userID, invitedBy)
 ### Error Handling
 
 ```go
-import "github.com/Dashgram/go-dashgram"
+import "github.com/dashgram/go-dashgram"
 
 // Check for specific error types
 if err := client.TrackEvent(event); err != nil {

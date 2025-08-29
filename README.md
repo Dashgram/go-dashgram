@@ -13,7 +13,7 @@ A Go SDK for integrating with the [Dashgram](https://dashgram.io) analytics plat
 ## Installation
 
 ```bash
-go get github.com/Dashgram/go-dashgram
+go get github.com/dashgram/go-dashgram
 ```
 
 ## Quick Start
@@ -33,14 +33,18 @@ func main() {
     defer client.Close()
 
     event := map[string]interface{}{
-        "user_id": 123456789,
-        "action":  "message_sent",
-        "chat_id": 987654321,
+        "update_id": 123,
+        "message": ...
     }
 
     if err := client.TrackEvent(event); err != nil {
         log.Printf("Failed to track event: %v", err)
     }
+
+    // or use async non-blocking version
+    client.TrackEventAsync(event)
+
+    client.InvitedByAsync(user_id, inviter_user_id) // for referral analytics
 }
 ```
 

@@ -1,3 +1,3 @@
 module github.com/dashgram/go-dashgram
 
-go 1.24.5
+go 1.20

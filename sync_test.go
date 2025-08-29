@@ -37,7 +37,10 @@ func TestDashgram_TrackEvent(t *testing.T) {
 			name:     "track event with async enabled",
 			event:    map[string]string{"action": "view", "page": "about"},
 			useAsync: true,
-			// No mock response needed for async mode
+			mockResponse: &http.Response{
+				StatusCode: http.StatusOK,
+				Body:       io.NopCloser(strings.NewReader(`{"status":"success","details":"ok"}`)),
+			},
 		},
 		{
 			name:  "API error response",

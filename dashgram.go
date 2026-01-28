@@ -181,7 +181,8 @@ func (d *Dashgram) request(ctx context.Context, endpoint string, data any) error
 		return fmt.Errorf("failed to parse response: %w", err)
 	}
 
-	if resp.StatusCode != http.StatusOK || response.Status != "success" {
+	// Check if status code is in 2xx range (200-299)
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 || response.Status != "success" {
 		return &DashgramAPIError{
 			StatusCode: resp.StatusCode,
 			Details:    response.Details,
